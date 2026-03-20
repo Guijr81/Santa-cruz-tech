@@ -18,6 +18,34 @@
       color: var(--branco);
       line-height: 1.6;
     }
+
+    /* Santa Cruz Tech badge (fixed, left side at top and bottom) */
+    .sct-badge{
+      position: fixed;
+      left: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.03);
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+      z-index: 9999;
+      max-width: 260px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    .sct-badge img{ width:48px; height:auto; display:block; }
+    .sct-badge .sct-text{ font-size:0.92rem; color:var(--branco); line-height:1; }
+    .sct-badge .sct-text strong{ color:var(--vermelho); display:block; font-size:1rem; }
+
+    .sct-top{ top:18px; }
+    .sct-bottom{ bottom:18px; }
+
+    /* Hide badges on very small screens to avoid overlap */
+    @media (max-width:420px){
+      .sct-badge{ display:none; }
+    }
+
     header.hero {
       position: relative;
       height: 100vh;
@@ -163,6 +191,12 @@
 </head>
 <body>
 
+  <!-- Santa Cruz Tech badges (fixed left) -->
+  <div class="sct-badge sct-top" aria-hidden="false">
+    <img src="assets/santa-cruz-tech-logo.png" alt="Santa Cruz Tech logo">
+    <div class="sct-text">Uma iniciativa da empresa<br><strong>Santa Cruz Tech</strong></div>
+  </div>
+
   <!-- Início: Hero com Arruda de fundo + símbolo da camisa grande -->
   <header class="hero">
     <div class="hero-content">
@@ -239,6 +273,12 @@
       <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=ZQKpXPeo34k" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ZQKpXPeo34k/hqdefault.jpg" alt="Vídeo 3"></a></div>
     </div>
   </section>
+
+  <!-- Bottom Santa Cruz Tech badge -->
+  <div class="sct-badge sct-bottom" aria-hidden="false">
+    <img src="assets/santa-cruz-tech-logo.png" alt="Santa Cruz Tech logo">
+    <div class="sct-text">Uma iniciativa da empresa<br><strong>Santa Cruz Tech</strong></div>
+  </div>
 
   <footer>
     <p>Feito com paixão por um tricolor ❤️⚫️</p>
