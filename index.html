@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>O Arruda É Nosso - Ajude a Reformar!</title>
+  <style>
+    :root {
+      --preto: #000;
+      --vermelho: #c8102e;
+      --branco: #fff;
+      --cinza-escuro: #111;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--preto);
+      color: var(--branco);
+      line-height: 1.6;
+    }
+    header.hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+                  url('https://c8.alamy.com/comp/2C7A4N2/soccer-stadium-and-official-headquarters-of-santa-cruz-futebol-clube-jos-do-rego-maciel-also-known-as-arruda-or-arrudo-recife-pernambuco-brazil-2C7A4N2.jpg') center/cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-content {
+      max-width: 1000px;
+      position: relative;
+      z-index: 2;
+    }
+    .escudo-textura {
+      width: 220px;
+      margin-bottom: 25px;
+      filter: drop-shadow(0 0 20px rgba(200,16,46,0.8));
+      border-radius: 20px;
+    }
+    h1 {
+      font-size: 3.8rem;
+      color: var(--vermelho);
+      margin-bottom: 25px;
+      text-shadow: 4px 4px 10px #000;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-doar {
+      display: inline-block;
+      background: var(--vermelho);
+      color: var(--branco);
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 20px 60px;
+      border-radius: 60px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(200,16,46,0.6);
+      transition: all 0.3s;
+      animation: pulse 2.2s infinite;
+    }
+    .btn-doar:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 35px rgba(200,16,46,0.9);
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h2 {
+      color: var(--vermelho);
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 35px;
+      border-bottom: 4px solid var(--vermelho);
+      padding-bottom: 15px;
+    }
+    .arruda-fundo {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+                  url('https://i.ytimg.com/vi/II6W0ozgPTw/maxresdefault.jpg') center/cover no-repeat;
+      background-attachment: fixed;
+    }
+    .urgencia {
+      background: #400000;
+      padding: 25px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: 2px solid var(--vermelho);
+    }
+    .valor-destaque {
+      font-size: 4rem;
+      color: var(--vermelho);
+      text-align: center;
+      margin: 30px 0;
+      text-shadow: 2px 2px 8px #000;
+    }
+    .escudo-meio {
+      display: block;
+      width: 160px;
+      margin: 30px auto;
+      filter: drop-shadow(0 0 15px rgba(200,16,46,0.6));
+    }
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+    footer {
+      background: var(--cinza-escuro);
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 2.8rem; }
+      .btn-doar { font-size: 1.5rem; padding: 16px 45px; }
+      .escudo-textura { width: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Início: Hero com Arruda de fundo + símbolo da camisa grande -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_2X_953782-MLA102179325981_122025-O.webp" 
+           alt="Escudo Santa Cruz em tecido" class="escudo-textura">
+      <h1>O Arruda É Nosso</h1>
+      <p>O gigante que a torcida ergueu com tijolos, suor e amor hoje está defasado e clama por nós. Não espere pela SAF. A força que construiu o Arruda vai reformá-lo novamente!</p>
+      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar">DOE R$ 25 AGORA</a>
+    </div>
+  </header>
+
+  <!-- Motivo -->
+  <section>
+    <h2>Por que agir AGORA?</h2>
+    <p>O Arruda, nosso maior patrimônio, está sem laudos, sem público há meses, com corrosão, infiltrações e estruturas envelhecidas. O colosso que já viu glórias imensas sofre abandono.</p>
+    <div class="urgencia">
+      A torcida construiu esse estádio nos anos 60/70. Hoje, só a torcida pode salvá-lo.<br>
+      <strong>Não vamos esperar por ninguém. Vamos agir!</strong>
+    </div>
+  </section>
+
+  <!-- Apelo emocional com Arruda de fundo + símbolo no meio -->
+  <section class="arruda-fundo">
+    <h2>Volte a ter glórias no Mundão</h2>
+    <p>Imagine 60 mil tricolores lotando o Arruda novamente, fazendo o chão tremer, revivendo as noites épicas. Esse sonho não depende de investidores — depende de nós.</p>
+    <img src="https://img.elo7.com.br/product/zoom/43D10EE/bandeira-do-santa-cruz-bandeira-de-time.jpg" alt="Símbolo Santa Cruz" class="escudo-meio">
+    <p class="valor-destaque">R$ 25</p>
+    <p style="text-align:center; font-size:1.4rem;">
+      Um valor simples, que cabe no bolso de qualquer tricolor.<br>
+      Doe hoje. Doe amanhã. Doe quantas vezes quiser.<br>
+      Cada R$ 25 é mais um tijolo para trazer o Arruda de volta.
+    </p>
+    <div style="text-align:center; margin:50px 0;">
+      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar">QUERO AJUDAR COM R$ 25</a>
+    </div>
+  </section>
+
+  <!-- Doação reforçada -->
+  <section>
+    <h2>Emergência: o Arruda não pode esperar mais</h2>
+    <p>Reformas emergenciais já começaram, mas precisamos de recursos para liberar o estádio seguro e grandioso. É investimento na nossa identidade.</p>
+    <div style="text-align:center; margin:40px 0;">
+      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar">DOE AGORA – LINK SEGURO</a>
+    </div>
+  </section>
+
+  <!-- História com Arruda de fundo -->
+  <section class="arruda-fundo">
+    <h2>Construído pela torcida, para a torcida</h2>
+    <p>Na Campanha dos Tijolos de 1965, o povo saiu às ruas com carrinhos, ônibus e caminhões levando materiais. Milhões de tijolos viraram o Arruda em 1972 — erguido por mãos tricolores.</p>
+    <p>Hoje, o gigante que construímos precisa de nós de novo. Vamos repetir a história e mostrar que a torcida nunca desiste?</p>
+  </section>
+
+  <!-- Doação final reforçada -->
+  <section>
+    <h2>Não deixe o Arruda morrer aos poucos</h2>
+    <p class="valor-destaque">R$ 25 × quantas vezes você puder</p>
+    <p style="text-align:center; font-size:1.5rem; margin:40px 0;">
+      10 mil tricolores doando R$ 25 = R$ 250 mil para a primeira fase.<br>
+      Muitos doando várias vezes = o Arruda renascido e lotado.
+    </p>
+    <div style="text-align:center;">
+      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar">FAÇA SUA PARTE AGORA</a>
+    </div>
+  </section>
+
+  <!-- Vídeos -->
+  <section>
+    <h2>Veja o que está acontecendo com o nosso Arruda</h2>
+    <div class="videos-grid">
+      <!-- Substitua pelos seus links reais de YouTube -->
+      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/SEU_VIDEO_1_AQUI" frameborder="0" allowfullscreen></iframe></div>
+      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/SEU_VIDEO_2_AQUI" frameborder="0" allowfullscreen></iframe></div>
+      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/SEU_VIDEO_3_AQUI" frameborder="0" allowfullscreen></iframe></div>
+      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/SEU_VIDEO_4_AQUI" frameborder="0" allowfullscreen></iframe></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Feito com paixão por um tricolor ❤️⚫️</p>
+    <p>O Arruda não é só concreto. É nossa casa, nossa história, nosso orgulho eterno.</p>
+  </footer>
+
+  <script>
+    // Alerta motivador ao clicar (opcional, visual)
+    document.querySelectorAll('.btn-doar').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTimeout(() => {
+          alert("Obrigado, tricolor! Cada R$ 25 nos aproxima do Arruda lotado de novo. Avante Santa!");
+        }, 500);
+      });
+    });
+  </script>
+
+</body>
+</html>
