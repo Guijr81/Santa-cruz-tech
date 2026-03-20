@@ -131,6 +131,17 @@
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.7);
     }
+    .video-wrapper a {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: block;
+    }
+    .video-wrapper img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .video-wrapper iframe {
       position: absolute;
       top: 0; left: 0;
@@ -222,11 +233,11 @@
   <section>
     <h2>Veja o que está acontecendo com o nosso Arruda</h2>
     <div class="videos-grid">
-      <!-- Substitua pelos seus links reais de YouTube -->
-      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2tnXqD-EFeg" frameborder="0" allowfullscreen></iframe></div>
-      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/xRtA0zknSDg" frameborder="0" allowfullscreen></iframe></div>
-      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/ZQKpXPeo34k" frameborder="0" allowfullscreen></iframe></div>
-      <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/SEU_VIDEO_4_AQUI" frameborder="0" allowfullscreen></iframe></div>
+      <!-- agora abrem no YouTube (nova aba) -->
+      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=2tnXqD-EFeg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/2tnXqD-EFeg/hqdefault.jpg" alt="Vídeo 1"></a></div>
+      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=xRtA0zknSDg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/xRtA0zknSDg/hqdefault.jpg" alt="Vídeo 2"></a></div>
+      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=ZQKpXPeo34k" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ZQKpXPeo34k/hqdefault.jpg" alt="Vídeo 3"></a></div>
+      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=SEU_VIDEO_4_AQUI" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/SEU_VIDEO_4_AQUI/hqdefault.jpg" alt="Vídeo 4"></a></div>
     </div>
   </section>
 
