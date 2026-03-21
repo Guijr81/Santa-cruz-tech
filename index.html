@@ -14,6 +14,15 @@
       --sct-badge-gap: 18px;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
+
+    /* Skip link for keyboard users */
+    .skip-link {
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus {
+      position:fixed; left:var(--sct-badge-gap); top:var(--sct-badge-gap); background:#000; color:#fff; padding:8px 12px; border-radius:6px; z-index:10000;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--preto);
@@ -31,11 +40,11 @@
       gap: 8px;
       padding: 6px 10px;
       border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
       z-index: 9999;
       max-width: var(--sct-badge-width);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-      background: rgba(0,0,0,0.25); /* small rounded background only for the badge */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      background: transparent; /* transparent so background image shows through */
     }
     .sct-badge .sct-text{ font-size:0.95rem; color:var(--branco); line-height:1; }
     .sct-badge .sct-text strong{
@@ -43,10 +52,11 @@
       display:block;
       font-size:1.05rem;
       font-weight:700;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+      -webkit-text-stroke: 0;
     }
 
-    /* Avoid adding a black strip to the whole left side: use a .main wrapper margin instead of body padding */
+    /* Layout wrapper (semantic main) */
     .main { margin-left: 0; }
     @media (min-width: 600px){
       .main { margin-left: calc(var(--sct-badge-width) + var(--sct-badge-gap) + 12px); }
@@ -68,6 +78,11 @@
       text-align: center;
       padding: 20px;
     }
+    /* avoid background-attachment:fixed on small screens for performance */
+    @media (max-width: 700px) {
+      header.hero { background-attachment: scroll; }
+    }
+
     .hero-content { max-width: 1000px; position: relative; z-index: 2; }
     .escudo-textura { width: 220px; margin-bottom: 25px; filter: drop-shadow(0 0 20px rgba(200,16,46,0.8)); border-radius: 20px; }
     h1 { font-size: 3.8rem; color: var(--vermelho); margin-bottom: 25px; text-shadow: 4px 4px 10px #000; }
@@ -89,17 +104,19 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
   <!-- Santa Cruz Tech reference (left-top only, text only) -->
   <div class="sct-badge" role="complementary" aria-label="Iniciativa Santa Cruz Tech">
     <div class="sct-text">Uma iniciativa da empresa<br><strong>Santa Cruz Tech</strong></div>
   </div>
 
-  <div class="main">
+  <main id="main-content" class="main">
     <header class="hero">
       <div class="hero-content">
         <h1>O Arruda É Nosso</h1>
         <p>O gigante que a torcida ergueu com tijolos, suor e amor hoje está defasado e clama por nós. Não espere pela SAF. A força que construiu o Arruda vai reformá-lo novamente!</p>
-        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">DOE R$ 25 AGORA</a>
+        <a href="https://mpago.la/13z75vL" target="_blank" rel="noopener noreferrer" class="btn-doar">DOE R$ 25 AGORA</a>
       </div>
     </header>
 
@@ -117,7 +134,7 @@
       <p>Imagine 60 mil tricolores lotando o Arruda novamente, fazendo o chão tremer, revivendo as noites épicas. Esse sonho não depende de investidores — depende de nós.</p>
       <p class="valor-destaque">R$ 25</p>
       <div style="text-align:center; margin:50px 0;">
-        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">QUERO AJUDAR COM R$ 25</a>
+        <a href="https://mpago.la/13z75vL" target="_blank" rel="noopener noreferrer" class="btn-doar">QUERO AJUDAR COM R$ 25</a>
       </div>
     </section>
 
@@ -125,7 +142,7 @@
       <h2>Emergência: o Arruda não pode esperar mais</h2>
       <p>Reformas emergenciais já começaram, mas precisamos de recursos para liberar o estádio seguro e grandioso. É investimento na nossa identidade.</p>
       <div style="text-align:center; margin:40px 0;">
-        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">DOE AGORA – LINK SEGURO</a>
+        <a href="https://mpago.la/13z75vL" target="_blank" rel="noopener noreferrer" class="btn-doar">DOE AGORA – LINK SEGURO</a>
       </div>
     </section>
 
@@ -138,7 +155,7 @@
       <h2>Não deixe o Arruda morrer aos poucos</h2>
       <p class="valor-destaque">R$ 25 × quantas vezes você puder</p>
       <div style="text-align:center;">
-        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">FAÇA SUA PARTE AGORA</a>
+        <a href="https://mpago.la/13z75vL" target="_blank" rel="noopener noreferrer" class="btn-doar">FAÇA SUA PARTE AGORA</a>
       </div>
     </section>
 
@@ -156,12 +173,18 @@
       <p>O Arruda não é só concreto. É nossa casa, nossa história, nosso orgulho eterno.</p>
     </footer>
 
-  </div>
+  </main>
 
   <script>
+    // Keep the small alert but ensure it runs in the opener window (links open in new tabs)
     document.querySelectorAll('.btn-doar').forEach(btn => {
-      btn.addEventListener('click', () => {
-        setTimeout(() => { alert("Obrigado, tricolor! Cada R$ 25 nos aproxima do Arruda lotado de novo. Avante Santa!"); }, 500);
+      btn.addEventListener('click', (e) => {
+        try {
+          setTimeout(() => { alert("Obrigado, tricolor! Cada R$ 25 nos aproxima do Arruda lotado de novo. Avante Santa!"); }, 500);
+        } catch (err) {
+          // swallow errors to avoid breaking navigation
+          console.error(err);
+        }
       });
     });
   </script>
