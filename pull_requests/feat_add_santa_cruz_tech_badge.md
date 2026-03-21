@@ -1,0 +1,3 @@
+## feat: add Santa Cruz Tech badges and logo to homepage  
+
+Este PR adiciona badges fixos no lado esquerdo (topo e rodapé) com o texto 'Uma iniciativa da empresa Santa Cruz Tech' e o logotipo. Inclui ajustes de layout e CSS responsivo para evitar sobreposição do conteúdo, melhorias de acessibilidade (link 'Pular para o conteúdo', aria-labels) e adiciona o arquivo de logo em assets/santa-cruz-tech-logo.png.
