@@ -21,7 +21,7 @@
       line-height: 1.6;
     }
 
-    /* Santa Cruz Tech badge (fixed, left-top only) */
+    /* Santa Cruz Tech reference (left-top only, text only) */
     .sct-badge{
       position: fixed;
       left: var(--sct-badge-gap);
@@ -29,32 +29,31 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,255,255,0.03);
-      padding: 8px 12px;
+      padding: 6px 10px;
       border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.06);
       z-index: 9999;
       max-width: var(--sct-badge-width);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
-      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.25); /* small rounded background only for the badge */
     }
     .sct-badge .sct-text{ font-size:0.95rem; color:var(--branco); line-height:1; }
     .sct-badge .sct-text strong{
-      color: var(--vermelho);
+      color: var(--branco);
       display:block;
       font-size:1.05rem;
       font-weight:700;
-      -webkit-text-stroke: 1.6px var(--branco); /* white outline for WebKit */
-      text-shadow: 0 0 2px var(--branco); /* fallback */
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
     }
 
-    /* Give page left padding on wide screens so badge doesn't overlap content */
+    /* Avoid adding a black strip to the whole left side: use a .main wrapper margin instead of body padding */
+    .main { margin-left: 0; }
     @media (min-width: 600px){
-      body{ padding-left: calc(var(--sct-badge-width) + var(--sct-badge-gap) + 12px); }
+      .main { margin-left: calc(var(--sct-badge-width) + var(--sct-badge-gap) + 12px); }
     }
     @media (max-width:420px){
       .sct-badge{ display:none; }
-      body{ padding-left: 12px; }
+      .main{ margin-left: 12px; }
     }
 
     header.hero {
@@ -95,66 +94,69 @@
     <div class="sct-text">Uma iniciativa da empresa<br><strong>Santa Cruz Tech</strong></div>
   </div>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>O Arruda É Nosso</h1>
-      <p>O gigante que a torcida ergueu com tijolos, suor e amor hoje está defasado e clama por nós. Não espere pela SAF. A força que construiu o Arruda vai reformá-lo novamente!</p>
-      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">DOE R$ 25 AGORA</a>
-    </div>
-  </header>
+  <div class="main">
+    <header class="hero">
+      <div class="hero-content">
+        <h1>O Arruda É Nosso</h1>
+        <p>O gigante que a torcida ergueu com tijolos, suor e amor hoje está defasado e clama por nós. Não espere pela SAF. A força que construiu o Arruda vai reformá-lo novamente!</p>
+        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">DOE R$ 25 AGORA</a>
+      </div>
+    </header>
 
-  <section>
-    <h2>Por que agir AGORA?</h2>
-    <p>O Arruda, nosso maior patrimônio, está sem laudos, sem público há meses, com corrosão, infiltrações e estruturas envelhecidas. O colosso que já viu glórias imensas sofre abandono.</p>
-    <div class="urgencia">
-      A torcida construiu esse estádio nos anos 60/70. Hoje, só a torcida pode salvá-lo.<br>
-      <strong>Não vamos esperar por ninguém. Vamos agir!</strong>
-    </div>
-  </section>
+    <section>
+      <h2>Por que agir AGORA?</h2>
+      <p>O Arruda, nosso maior patrimônio, está sem laudos, sem público há meses, com corrosão, infiltrações e estruturas envelhecidas. O colosso que já viu glórias imensas sofre abandono.</p>
+      <div class="urgencia">
+        A torcida construiu esse estádio nos anos 60/70. Hoje, só a torcida pode salvá-lo.<br>
+        <strong>Não vamos esperar por ninguém. Vamos agir!</strong>
+      </div>
+    </section>
 
-  <section class="arruda-fundo">
-    <h2>Volte a ter glórias no Mundão</h2>
-    <p>Imagine 60 mil tricolores lotando o Arruda novamente, fazendo o chão tremer, revivendo as noites épicas. Esse sonho não depende de investidores — depende de nós.</p>
-    <p class="valor-destaque">R$ 25</p>
-    <div style="text-align:center; margin:50px 0;">
-      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">QUERO AJUDAR COM R$ 25</a>
-    </div>
-  </section>
+    <section class="arruda-fundo">
+      <h2>Volte a ter glórias no Mundão</h2>
+      <p>Imagine 60 mil tricolores lotando o Arruda novamente, fazendo o chão tremer, revivendo as noites épicas. Esse sonho não depende de investidores — depende de nós.</p>
+      <p class="valor-destaque">R$ 25</p>
+      <div style="text-align:center; margin:50px 0;">
+        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">QUERO AJUDAR COM R$ 25</a>
+      </div>
+    </section>
 
-  <section>
-    <h2>Emergência: o Arruda não pode esperar mais</h2>
-    <p>Reformas emergenciais já começaram, mas precisamos de recursos para liberar o estádio seguro e grandioso. É investimento na nossa identidade.</p>
-    <div style="text-align:center; margin:40px 0;">
-      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">DOE AGORA – LINK SEGURO</a>
-    </div>
-  </section>
+    <section>
+      <h2>Emergência: o Arruda não pode esperar mais</h2>
+      <p>Reformas emergenciais já começaram, mas precisamos de recursos para liberar o estádio seguro e grandioso. É investimento na nossa identidade.</p>
+      <div style="text-align:center; margin:40px 0;">
+        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">DOE AGORA – LINK SEGURO</a>
+      </div>
+    </section>
 
-  <section class="arruda-fundo">
-    <h2>Construído pela torcida, para a torcida</h2>
-    <p>Na Campanha dos Tijolos de 1965, o povo saiu às ruas com carrinhos, ônibus e caminhões levando materiais. Milhões de tijolos viraram o Arruda em 1972 — erguido por mãos tricolores.</p>
-  </section>
+    <section class="arruda-fundo">
+      <h2>Construído pela torcida, para a torcida</h2>
+      <p>Na Campanha dos Tijolos de 1965, o povo saiu às ruas com carrinhos, ônibus e caminhões levando materiais. Milhões de tijolos viraram o Arruda em 1972 — erguido por mãos tricolores.</p>
+    </section>
 
-  <section>
-    <h2>Não deixe o Arruda morrer aos poucos</h2>
-    <p class="valor-destaque">R$ 25 × quantas vezes você puder</p>
-    <div style="text-align:center;">
-      <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">FAÇA SUA PARTE AGORA</a>
-    </div>
-  </section>
+    <section>
+      <h2>Não deixe o Arruda morrer aos poucos</h2>
+      <p class="valor-destaque">R$ 25 × quantas vezes você puder</p>
+      <div style="text-align:center;">
+        <a href="https://mpago.la/13z75vL" target="_blank" class="btn-doar" rel="noopener">FAÇA SUA PARTE AGORA</a>
+      </div>
+    </section>
 
-  <section>
-    <h2>Veja o que está acontecendo com o nosso Arruda</h2>
-    <div class="videos-grid">
-      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=2tnXqD-EFeg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/2tnXqD-EFeg/hqdefault.jpg" alt="Vídeo 1"></a></div>
-      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=xRtA0zknSDg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/xRtA0zknSDg/hqdefault.jpg" alt="Vídeo 2"></a></div>
-      <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=ZQKpXPeo34k" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ZQKpXPeo34k/hqdefault.jpg" alt="Vídeo 3"></a></div>
-    </div>
-  </section>
+    <section>
+      <h2>Veja o que está acontecendo com o nosso Arruda</h2>
+      <div class="videos-grid">
+        <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=2tnXqD-EFeg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/2tnXqD-EFeg/hqdefault.jpg" alt="Vídeo 1"></a></div>
+        <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=xRtA0zknSDg" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/xRtA0zknSDg/hqdefault.jpg" alt="Vídeo 2"></a></div>
+        <div class="video-wrapper"><a href="https://www.youtube.com/watch?v=ZQKpXPeo34k" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/ZQKpXPeo34k/hqdefault.jpg" alt="Vídeo 3"></a></div>
+      </div>
+    </section>
 
-  <footer>
-    <p>Feito com paixão por um tricolor ❤️⚫️</p>
-    <p>O Arruda não é só concreto. É nossa casa, nossa história, nosso orgulho eterno.</p>
-  </footer>
+    <footer>
+      <p>Feito com paixão por um tricolor ❤️⚫️</p>
+      <p>O Arruda não é só concreto. É nossa casa, nossa história, nosso orgulho eterno.</p>
+    </footer>
+
+  </div>
 
   <script>
     document.querySelectorAll('.btn-doar').forEach(btn => {
